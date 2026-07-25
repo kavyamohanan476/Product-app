@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import './App.css'
+import Product from './pages/Product'
 
 function App() {
 
   return (
     <>
-     
+     <Product/>
     </>
   )
 }

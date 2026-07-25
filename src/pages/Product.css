@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Product.jsx Container & Grid Styles
+   ========================================================================== */
+
+/* Main layout wrapper */
+.user-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Main Top Cart Button Style */
+.cart-main-btn {
+  background-color: #374151;
+  color: white;
+  border: 1px solid #4b5563;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+/* THE MAGIC GRID BLOCK */
+.product-grid {
+  display: grid;
+  /* Automatically wraps items into columns; min width 280px per card */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; /* Space between each card grid block */
+  padding: 10px;
+  text-align: left; /* Aligns text cleanly inside the grid area */
+}
+
+
+/* ==========================================================================
+   ProductCard.jsx Individual Box Styles
+   ========================================================================== */
+
+/* The outer card container class */
+.container {
+  background-color: #1e222b; /* Sleek dark card color matching your UI */
+  border: 1px solid #2d323f;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Vertically stacks content inside the card */
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* FIX THE MASSIVE IMAGES */
+.container img {
+  width: 100%;
+  height: 200px; /* Constrains image height uniformly */
+  object-fit: contain; /* Prevents image stretching or breaking */
+  background-color: #11141a;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Content Text Styling */
+.container h3 {
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+}
+
+.container p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  /* Optional: limits descriptions to 3 lines max for neat grid matching */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+}
+
+/* Price & Discount Tags */
+.container h4 {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+/* Individual Add-to-Cart Buttons */
+.container button {
+  width: 100%;
+  background-color: #4b5563;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.container button:hover {
+  background-color: #6b7280;
+}
+
+/* Main top CART button style */
+.cart-btn {
+  background-color: #10b981; /* Nice emerald green to stand out */
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px; /* Slightly separates the letters */
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 40px; /* Pushes the grid down */
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover state effects */
+.cart-btn:hover {
+  background-color: #059669; /* Darker green on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+/* Active state effect when clicked */
+.cart-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+}
