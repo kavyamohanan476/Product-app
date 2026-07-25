@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 import { getProduct } from '../services/api'
 import ProductCard from "../components/ProductCard"
 import './Product.css';
 
-function Product(){
+function Product({cart, setCart}){
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [cart, setCart] = useState([]);
-    const [selectedProduct, setSelectedProduct] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -24,15 +24,19 @@ function Product(){
         fetchProduct();
     }, []);
 
-    function addCart(selectedProduct){
-        setCart([...cart, selectedProduct] );
-        console.log(cart);
+    function addCart(product){
+        const exists = cart.some((item) => item.id === product.id);
+        if(exists){
+            alert("Item already in cart")
+            return cart
+        }
+    setCart([...cart, product] );
     }
     
     return(
         <div className="user-container">
             <h1>PRODUCT APP</h1>
-            <button onClick={cart}className="cart-btn">CART</button>
+            <button onClick={() => navigate('/Cart')} className="cart-btn">CART</button>
             <div className="product-grid">
             {product.map((item) => (
                 <ProductCard key={item.id} product={item} onClick={addCart}/>
