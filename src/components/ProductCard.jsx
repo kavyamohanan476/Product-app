@@ -1,5 +1,5 @@
 import React from "react";
-import './ProductCard.css'
+import './Productcard.css'
 
 function ProductCard({product, onClick}){
     return(
