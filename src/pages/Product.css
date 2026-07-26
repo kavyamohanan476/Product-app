@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Product.jsx Container & Grid Styles
-   ========================================================================== */
-
 /* Main layout wrapper */
 .user-container {
   max-width: 1200px;
@@ -22,7 +18,7 @@
   margin-bottom: 30px;
 }
 
-/* THE MAGIC GRID BLOCK */
+
 .product-grid {
   display: grid;
   /* Automatically wraps items into columns; min width 280px per card */
@@ -31,11 +27,6 @@
   padding: 10px;
   text-align: left; /* Aligns text cleanly inside the grid area */
 }
-
-
-/* ==========================================================================
-   ProductCard.jsx Individual Box Styles
-   ========================================================================== */
 
 /* The outer card container class */
 .container {
@@ -55,7 +46,7 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* FIX THE MASSIVE IMAGES */
+
 .container img {
   width: 100%;
   height: 200px; /* Constrains image height uniformly */
@@ -110,28 +101,27 @@
 
 /* Main top CART button style */
 .cart-btn {
-  background-color: #10b981; /* Nice emerald green to stand out */
+  background-color: #10b981;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 1px; /* Slightly separates the letters */
+  letter-spacing: 1px; 
   border: none;
   padding: 12px 28px;
   border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 40px; /* Pushes the grid down */
+  margin-bottom: 40px; 
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
   transition: all 0.2s ease-in-out;
 }
 
-/* Hover state effects */
+
 .cart-btn:hover {
-  background-color: #059669; /* Darker green on hover */
-  transform: translateY(-2px); /* Subtle lift effect */
+  background-color: #059669; 
+  transform: translateY(-2px); 
   box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
 }
 
-/* Active state effect when clicked */
 .cart-btn:active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);

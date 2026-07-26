@@ -1,7 +1,6 @@
 import React from "react";
-import './ProductCard.css'
 
-function ProductCard({product, onClick}){
+function CartProduct({product, onClick}){
     return(
         <div className="container">
             <img src={product.images[0]}  alt="product-image"/>
@@ -9,9 +8,9 @@ function ProductCard({product, onClick}){
             <p>{product.description}</p>
             <h4>Price: {product.price}</h4>
             <h4>Discount: {product.discountPercentage}</h4>
-            <button onClick={ () => onClick(product)}>+ Cart</button>
+            <button onClick={ () => onClick(product.id)}> - Cart</button>
         </div>
     )
 }
 
-export default ProductCard
+export default CartProduct

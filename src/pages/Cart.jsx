@@ -1,13 +1,24 @@
 import React from "react";
-import ProductCard from "../components/ProductCard";
+import CartProduct from "../components/CartProduct";
 
-function Cart({cart}){
+
+function Cart({cart, setCart}){
+
+    function removeCart(id){
+        setCart((cart) => cart.filter((product) => product.id !== id));
+    }
     return(
         <div>
             <h1>Cart Items</h1>
-            {cart.map((item) => (
-                <ProductCard key={item.id} product={item}/>
-            ))}
+            {cart.length === 0 ? (
+                <p>Cart is Empty</p>
+            ):(
+             cart.map((item) => (
+                <CartProduct key={item.id} product={item} onClick={removeCart}/>
+                
+            )))}
+            
+           
         </div>
     )
 }
