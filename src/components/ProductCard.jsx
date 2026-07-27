@@ -1,5 +1,5 @@
 import React from "react";
-import './Productcard.css'
+import './ProductCard.css'
 
 function ProductCard({product, onClick}){
     return(
@@ -9,7 +9,7 @@ function ProductCard({product, onClick}){
             <p>{product.description}</p>
             <h4>Price: {product.price}</h4>
             <h4>Discount: {product.discountPercentage}</h4>
-        mv src/components/Productcard.css src/components/temp.css    <button onClick={ () => onClick(product)}>+ Cart</button>
+            <button onClick={ () => onClick(product)}>+ Cart</button>
         </div>
     )
 }
